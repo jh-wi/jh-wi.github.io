@@ -4,6 +4,15 @@ import Layout from "../components/layout.js"
 import starboardThumb from "../../assets/starboard-thumb.png"
 import thumbCover from "../../assets/thumb-overlay.png"
 import mriviewerThumb from "../../assets/mriviewer-thumb.png"
+import { Helmet } from "react-helmet"
+
+class App extends React.PureComponent {
+	render () {
+		return (
+			<Helmet><title>Henry's Portfolio</title></Helmet>
+		)
+	}
+}
 
 const Navheader = () => {
 	return (
