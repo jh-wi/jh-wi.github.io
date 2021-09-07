@@ -1,13 +1,9 @@
 import React from "react"
-import ReactDOM from "react-dom"
 import styling from "../styling/index.scss"
-import Layout from "../components/layout.js"
 import starboardThumb from "../../assets/starboard-thumb.png"
 import thumbCover from "../../assets/thumb-overlay.png"
 import mriviewerThumb from "../../assets/mriviewer-thumb.png"
 import { Helmet } from "react-helmet"
-
-let globalSection = 0;
 
 class App extends React.PureComponent {
 	render () {
@@ -26,7 +22,6 @@ class Navheader extends React.Component {
 	
 	handleClick(newSection) {
 		this.setState({section: newSection});
-		globalSection = this.state.section;
 	};
 	
 	render() {
@@ -37,7 +32,6 @@ class Navheader extends React.Component {
 			primaryContent = <About />
 		}
 		return (
-			//<Layout>
 			<div>
 				<div class="navbar">
 					<button className={this.state.section == 0 ? 'nav-selected' : 'nav'} onClick={() => this.handleClick(0)}>projects</button>
@@ -46,20 +40,9 @@ class Navheader extends React.Component {
 				{primaryContent}
 				<Footer />
 			</div>
-			
-			//</Layout>
 		)
 	}
 }
-
-/*const Navheader = () => {
-	return (
-		<Layout>
-			<button class="nav-selected">projects</button>
-			<button class="nav">about</button>
-		</Layout>
-	)
-}*/
 
 const ProjectGallery = () => {
 	return (
@@ -96,48 +79,16 @@ const ProjectGallery = () => {
 
 const About = () => {
 	return (
-		<div>hey there</div>
+		<div></div>
 	)
 }
 
 const Footer = () => {
 	return (
 		<div>
-			<div class="footer">made with GastbyJS</div>
+			<div class="footer">made with GastbyJS • <a href="https://github.com/jh-wi/jh-wi.github.io/tree/source" target="_blank">source</a></div>
 		</div>
 	)
-}
-
-/*class IndexPage extends React.Component {
-	render() {
-		return (
-			<Navheader />
-		)
-	}
-}
-
-ReactDOM.render(
-	<IndexPage />,
-	document.getElementById("root")
-);*/
-
-const IndexPage = () => {
-	if (globalSection == 0) {
-		return (
-			<div>{globalSection}
-				<Navheader />
-				<ProjectGallery />
-				<Footer />
-			</div>
-		)
-	} else {
-		return (
-			<div>{globalSection}
-				<Navheader />
-				<Footer />
-			</div>
-		)
-	}
 }
 
 export default Navheader

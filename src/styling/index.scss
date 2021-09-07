@@ -72,7 +72,6 @@ body {
 	width: 100%;
 	left: 0;
 	top: 0;
-	//margin-top: 40px;
 	margin-left: auto;
 	margin-right: auto;
 	opacity: 0%;
@@ -98,7 +97,7 @@ body {
 	color: whitesmoke;
 	font-size: 22px;
 	width: 100%;
-	height: 100%;
+	height: fit-content;
 	text-align: left;
 	padding-left: 20px;
 	margin-right: 20px;
@@ -113,10 +112,8 @@ body {
 	position: relative;
 	width: 50%;
 	height: max-content;
-	//overflow: overlay;
 	margin-left: auto;
 	margin-right: auto;
-	//background-color: blue;
 }
 
 header {
@@ -128,6 +125,7 @@ header {
 .footer {
 	font-family: monospace;
 	color:#303033;
+	width: 100%;
 	font-size: 18px;
 	text-align: center;
 	margin-top: 50px;
