@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    //siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://henrywilliams.dev",
     title: "Henry's Dev Site",
 	image: "../../assets/site-logo.png"
   },
