@@ -33,6 +33,7 @@ class Navheader extends React.Component {
 		}
 		return (
 			<div>
+				<App />
 				<div class="navbar">
 					<button className={this.state.section == 0 ? 'nav-selected' : 'nav'} onClick={() => this.handleClick(0)}>projects</button>
 					<button className={this.state.section == 1 ? 'nav-selected' : 'nav'}  onClick={() => this.handleClick(1)}>about</button>
@@ -54,7 +55,9 @@ const ProjectGallery = () => {
 				<div class="project-info">
 					<div class="project-title">Starboard</div>
 					<div class="project-desc">
-						Multiplayer survival game
+						Open-world multiplayer survival game, featuring a complex base building system<br></br>
+						<br></br>
+						Made with C# in Unity
 					</div>
 				</div>
 				<img src={thumbCover} class="project-overlay"></img>
@@ -66,7 +69,7 @@ const ProjectGallery = () => {
 				<div class="project-info">
 					<div class="project-title">MRIviewer</div>
 					<div class="project-desc">
-						REU research project to model & visualize DTMRI scans of the heart
+						REU research project to mesh & visualize DTMRI scans of the heart
 						<br></br><br></br>
 						Made with C++ and OpenGL
 					</div>
