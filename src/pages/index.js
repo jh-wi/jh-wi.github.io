@@ -1,14 +1,20 @@
-import React from "react"
+import React, { useCallback } from "react"
 import styling from "../styling/index.scss"
-import starboardThumb from "../../assets/starboard-thumb.png"
+import starboardThumb from "../../assets/starboard-thumb-2.png"
 import thumbCover from "../../assets/thumb-overlay.png"
 import mriviewerThumb from "../../assets/mriviewer-thumb.png"
 import { Helmet } from "react-helmet"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import Starboard from "./starboard.js"
 
 class App extends React.PureComponent {
 	render () {
 		return (
-			<Helmet><title>Henry's Portfolio</title></Helmet>
+			<Router>
+				<Helmet><title>Henry's Portfolio</title></Helmet>
+				<Route path="/starboard" component={Starboard} />
+				<Route exact path="/" component={Navheader} />
+			</Router>
 		)
 	}
 }
@@ -25,23 +31,22 @@ class Navheader extends React.Component {
 	};
 	
 	render() {
-		let primaryContent;
-		if (this.state.section == 0) {
-			primaryContent = <ProjectGallery />;
-		} else if (this.state.section == 1) {
-			primaryContent = <About />
-		}
-		return (
-			<div>
-				<App />
-				<div class="navbar">
-					<button className={this.state.section == 0 ? 'nav-selected' : 'nav'} onClick={() => this.handleClick(0)}>projects</button>
-					<button className={this.state.section == 1 ? 'nav-selected' : 'nav'}  onClick={() => this.handleClick(1)}>about</button>
+			let primaryContent;
+			if (this.state.section == 0) {
+				primaryContent = <ProjectGallery />;
+			} else if (this.state.section == 1) {
+				primaryContent = <About />
+			}
+			return (
+				<div>
+					<div class="navbar">
+						<button className={this.state.section == 0 ? 'nav-selected' : 'nav'} onClick={() => this.handleClick(0)}>projects</button>
+						<button className={this.state.section == 1 ? 'nav-selected' : 'nav'}  onClick={() => this.handleClick(1)}>about</button>
+					</div>
+					{primaryContent}
+					<Footer />
 				</div>
-				{primaryContent}
-				<Footer />
-			</div>
-		)
+			)
 	}
 }
 
@@ -60,7 +65,9 @@ const ProjectGallery = () => {
 						Made with C# in Unity
 					</div>
 				</div>
-				<img src={thumbCover} class="project-overlay"></img>
+				<Link to="/starboard">
+					<img src={thumbCover} class="project-overlay"></img>
+				</Link>
 			</div>
 			<div class="project-holder">
 				<div class="project-thumb-holder">
@@ -82,7 +89,23 @@ const ProjectGallery = () => {
 
 const About = () => {
 	return (
-		<div></div>
+		<div class="about-holder">
+			<div class="links">
+				<a href="https://www.linkedin.com/in/henrywilliamsprogrammer/" target="_blank">LinkedIn</a>
+				<br></br>
+				<a href="https://github.com/jh-wi" target="_blank">Github</a>
+			</div>
+			<div class="about">
+				Hi! I'm Henry. I'm a programmer. <br></br><br></br>
+				I mostly dabble in websites, games, graphics, & physics, and I love writing high-performance code. I'm a fast learner and can pick up any technology quickly.<br></br><br></br>
+				Here's what I'm already good at: <br></br>
+				• JavaScript, HTML, CSS <br></br>
+				• React, GatsbyJS, NodeJS <br></br>
+				• C++, OpenGL <br></br>
+				• C#, Unity3D <br></br>
+				• Python
+			</div>
+		</div>
 	)
 }
 
@@ -94,4 +117,4 @@ const Footer = () => {
 	)
 }
 
-export default Navheader
+export default App

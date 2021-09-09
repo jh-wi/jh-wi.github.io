@@ -1,5 +1,23 @@
 body {
 	background-color: #0F0F10;
+	font-family: monospace;
+	overflow: scroll;
+}
+
+::-webkit-scrollbar {
+	width: 15px;
+}
+
+::-webkit-scrollbar-track {
+	background: #121112;
+  }
+
+::-webkit-scrollbar-thumb {
+background: #1E1D1E;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #141314;
 }
 
 .nav {
@@ -96,12 +114,52 @@ body {
 	font-family: monospace;
 	color: whitesmoke;
 	font-size: 22px;
-	width: 100%;
+	width: 95%;
 	height: fit-content;
 	text-align: left;
 	padding-left: 20px;
 	margin-right: 20px;
 	top: 84px;
+}
+
+.about-holder {
+	display: flex;
+	margin-top: 50px;
+}
+
+.about {
+	position: relative;
+	width: 60%;
+	height: 90%;
+	max-width: 1000px;
+	margin-right: auto;
+	margin-left: 40px;
+	background-color: #121112;
+	color: whitesmoke;
+	font-size: 22px;
+	padding: 20px;
+	line-height: 1.2;
+}
+
+.links {
+	position: relative;
+	width: 100px;
+	height: 90%;
+	margin-left: auto;
+	background-color: #121112;
+	color: whitesmoke;
+	font-size: 22px;
+	padding: 20px;
+	//text-align: center;
+}
+
+.links a:link {
+	color: whitesmoke;
+	line-height: 1.5;
+}
+
+.links a:visited {
+	color: whitesmoke;
 }
 
 .project-overlay:hover {
@@ -137,4 +195,8 @@ header {
 
 .footer a:visited {
 	color: #303033;
+}
+
+.banner {
+	width: 100%;
 }
