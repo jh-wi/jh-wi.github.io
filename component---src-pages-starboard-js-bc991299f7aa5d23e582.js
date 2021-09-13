@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio_site=self.webpackChunkportfolio_site||[]).push([[482],{8743:function(e,t,r){r.r(t);var a=r(7294),l=r(21),n=r(1983);t.default=function(){return a.createElement("div",null,a.createElement("div",null,a.createElement("img",{class:"banner",src:l.Z}),a.createElement("div",{class:"project-banner-title"},"Starboard")),a.createElement(n.rU,{to:"/starboard"},a.createElement("div",{class:"project-p"},"ahhhhh")))}}}]);
+//# sourceMappingURL=component---src-pages-starboard-js-bc991299f7aa5d23e582.js.map
