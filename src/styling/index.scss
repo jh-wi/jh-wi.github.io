@@ -122,6 +122,16 @@ background: #141314;
 	top: 84px;
 }
 
+.project-banner-title {
+	font-size: 72px;
+	color: whitesmoke;
+	width: 100%;
+	text-shadow: 5px 5px 10px black;
+	position: absolute;
+	text-align: center;
+	margin-top: -100px;
+}
+
 .about-holder {
 	display: flex;
 	margin-top: 50px;
@@ -199,4 +209,10 @@ header {
 
 .banner {
 	width: 100%;
+}
+
+.project-p {
+	font-family: monospace;
+	color: whitesmoke;
+	font-size: 22px;
 }

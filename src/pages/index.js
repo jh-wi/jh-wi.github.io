@@ -1,22 +1,46 @@
-import React, { useCallback } from "react"
+import React from "react"
 import styling from "../styling/index.scss"
 import starboardThumb from "../../assets/starboard-thumb-2.png"
 import thumbCover from "../../assets/thumb-overlay.png"
 import mriviewerThumb from "../../assets/mriviewer-thumb.png"
 import { Helmet } from "react-helmet"
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import Starboard from "./starboard.js"
+//import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { Router } from "@reach/router"
+import { navigate } from "gatsby"
+import { Link } from "gatsby"
+import { Starboard } from "./starboard.js"
+import starboardBanner from "/assets/starboard-project-banner.png"
 
-class App extends React.PureComponent {
-	render () {
-		return (
-			<Router>
-				<Helmet><title>Henry's Portfolio</title></Helmet>
-				<Route path="/starboard" component={Starboard} />
-				<Route exact path="/" component={Navheader} />
+
+/*const Starboard = () => {
+	return (
+		<div>
+			<div>
+				<img class="banner" src={starboardBanner}></img>
+				<div class="project-banner-title">Starboard</div>
+			</div>
+			<Link to="/">
+				<div class="project-p">
+					back
+				</div>
+			</Link>
+			
+		</div>
+		
+	)
+}*/
+
+const App = () => {
+	return (
+		<div>
+			<Helmet><title>Henry's Portfolio</title></Helmet>
+			<Router basepath="/">
+				<Navheader path="/"/>
+				<Starboard path="/starboard"/>
 			</Router>
-		)
-	}
+		</div>
+		
+	)
 }
 
 class Navheader extends React.Component {
