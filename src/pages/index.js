@@ -4,31 +4,10 @@ import starboardThumb from "../../assets/starboard-thumb-2.png"
 import thumbCover from "../../assets/thumb-overlay.png"
 import mriviewerThumb from "../../assets/mriviewer-thumb.png"
 import { Helmet } from "react-helmet"
-//import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import { Router } from "@reach/router"
-import { navigate } from "gatsby"
 import { Link } from "gatsby"
 import { Starboard } from "./starboard.js"
-import starboardBanner from "/assets/starboard-project-banner.png"
-
-
-/*const Starboard = () => {
-	return (
-		<div>
-			<div>
-				<img class="banner" src={starboardBanner}></img>
-				<div class="project-banner-title">Starboard</div>
-			</div>
-			<Link to="/">
-				<div class="project-p">
-					back
-				</div>
-			</Link>
-			
-		</div>
-		
-	)
-}*/
+import { MRIviewer } from "./mriviewer.js"
 
 const App = () => {
 	return (
@@ -37,6 +16,7 @@ const App = () => {
 			<Router basepath="/">
 				<Navheader path="/"/>
 				<Starboard path="/starboard"/>
+				<MRIviewer path="/mriviewer"/>
 			</Router>
 		</div>
 		
@@ -105,7 +85,9 @@ const ProjectGallery = () => {
 						Made with C++ and OpenGL
 					</div>
 				</div>
-				<img src={thumbCover} class="project-overlay"></img>
+				<Link to="/mriviewer">
+					<img src={thumbCover} class="project-overlay"></img>
+				</Link>
 			</div>
 		</div>
 	)
@@ -123,8 +105,7 @@ const About = () => {
 				Hi! I'm Henry. I'm a programmer. <br></br><br></br>
 				I mostly dabble in websites, games, graphics, & physics, and I love writing high-performance code. I'm a fast learner and can pick up any technology quickly.<br></br><br></br>
 				Here's what I'm already good at: <br></br>
-				• JavaScript, HTML, CSS <br></br>
-				• React, GatsbyJS, NodeJS <br></br>
+				• JavaScript, HTML, CSS, React, GatsbyJS <br></br>
 				• C++, OpenGL <br></br>
 				• C#, Unity3D <br></br>
 				• Python

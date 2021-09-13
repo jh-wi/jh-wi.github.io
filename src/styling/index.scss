@@ -1,7 +1,9 @@
 body {
 	background-color: #0F0F10;
 	font-family: monospace;
-	overflow: scroll;
+	//overflow: scroll;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -13,11 +15,11 @@ body {
   }
 
 ::-webkit-scrollbar-thumb {
-background: #1E1D1E;
+	background: #1E1D1E;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-background: #141314;
+	background: #141314;
 }
 
 .nav {
@@ -179,6 +181,8 @@ background: #141314;
 .project-holder {
 	position: relative;
 	width: 50%;
+	min-width: 800px;
+	max-width: 1200px;
 	height: max-content;
 	margin-left: auto;
 	margin-right: auto;
@@ -211,8 +215,23 @@ header {
 	width: 100%;
 }
 
-.project-p {
+.back {
 	font-family: monospace;
 	color: whitesmoke;
-	font-size: 22px;
+	font-size: 28px;
+	margin-top: 10px;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.misc {
+	text-align: center;
+	font-family: monospace;
+	color: whitesmoke;
+	font-size: 36px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
