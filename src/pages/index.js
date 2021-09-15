@@ -97,8 +97,6 @@ const About = () => {
 	return (
 		<div class="about-holder">
 			<div class="links">
-				<a href="https://www.linkedin.com/in/henrywilliamsprogrammer/" target="_blank">LinkedIn</a>
-				<br></br>
 				<a href="https://github.com/jh-wi" target="_blank">Github</a>
 			</div>
 			<div class="about">
@@ -108,7 +106,7 @@ const About = () => {
 				• JavaScript, HTML, CSS, React, GatsbyJS <br></br>
 				• C++, OpenGL <br></br>
 				• C#, Unity3D <br></br>
-				• Python
+				• Python, scikit-learn
 			</div>
 		</div>
 	)

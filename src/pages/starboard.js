@@ -17,6 +17,21 @@ const Starboard = () => {
 				</div>
 			</Link>
 			<div class="info-box-holder">
+				<iframe class="info-media" src='https://thumbs.gfycat.com/ResponsibleUnevenGelada-mobile.mp4' frameborder='0' border='0' scrolling='no' allowfullscreen width='640' height='360'></iframe>
+				<div class="info-box">
+					Starboard is a game I've been working on for over 5 years. It's a huge project that will hopefully be released in 2022!<br></br><br></br>
+					The base building system is the center of gameplay in Starboard, and works by using sets of snapping points that define how different shapes of structures should be placed together.
+				</div>
+			</div>
+			<div class="info-box-holder">
+				<div class="info-box">
+					Structure stability is calculated using a graph that propagates stability updates through connected structures. 
+					This prevents structures from floating in the air when disconnected from the ground.<br></br><br></br>
+					Here's a visualization structural of stability (red = unstable)
+				</div>
+				<iframe class="info-media" src='https://thumbs.gfycat.com/FatGaseousAsianporcupine-mobile.mp4' frameborder='0' border='0' scrolling='no' allowfullscreen width='640' height='360'></iframe>
+			</div>
+			<div class="info-box-holder">
 				<iframe class="info-media" src='https://thumbs.gfycat.com/UnnaturalFavoriteBug-mobile.mp4' frameborder='0' border='0' scrolling='no' allowfullscreen width='640' height='360'></iframe>
 				<div class="info-box">
 					Procedural animation is used with most creatures in Starboard to allow for more dynamic and natural body movements.<br></br><br></br>
