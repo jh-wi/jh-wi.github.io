@@ -1,1 +1,0 @@
-(self.webpackChunkportfolio_site=self.webpackChunkportfolio_site||[]).push([[992],{5260:function(){}}]);

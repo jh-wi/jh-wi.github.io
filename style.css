@@ -1,0 +1,12 @@
+body {
+	margin: auto;
+	text-align: center;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+	display: inline-block;
+	text-align: left, justify;
+	font-size: large;
+	width: 33%;
+}

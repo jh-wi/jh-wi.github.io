@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkportfolio_site=self.webpackChunkportfolio_site||[]).push([[120],{2791:function(e,t,n){n.r(t);var c=n(7294),l=(n(9499),n(5444));t.default=function(){return c.createElement("div",null,c.createElement("div",{class:"misc"},"🚧 under construction 🚧"),c.createElement(l.rU,{to:"/",style:{textDecoration:"none"}},c.createElement("div",{class:"back"},c.createElement("u",null,"back to projects"))))}}}]);
-//# sourceMappingURL=component---src-pages-mriviewer-js-619aaf8297d99663569f.js.map
