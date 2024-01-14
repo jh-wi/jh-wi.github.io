@@ -2,12 +2,12 @@ body {
 	margin: auto;
 	text-align: center;
 	font-family: 'Times New Roman', Times, serif;
-	width: 33%;
+	width:90%;
 }
 
-@media (pointer:none), (pointer:coarse) {
+@media (pointer:fine) {
 body {
-	width: 90%;
+	width: 33%;
 }
 }
 
