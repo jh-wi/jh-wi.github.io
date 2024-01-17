@@ -1,18 +1,42 @@
-body {
+#intro {
 	margin: auto;
 	text-align: center;
-	font-family: 'Times New Roman', Times, serif;
-	width:90%;
+	font-family: Arial, sans-serif;
+	width: 900px;
+	font-size: large;
 }
 
-@media (pointer:fine) {
-body {
-	width: 33%;
+#main {
+	margin: auto;
+	text-align: left;
+	font-family: Arial, sans-serif;
+	width: 900px;
+	font-size: large;
 }
-}
+
+/*video {
+	width: 900px;
+}*/
 
 p {
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: left;
+}
+
+.section {
+	text-align: left;
+}
+
+.figure {
 	display: inline-block;
-	text-align: left, justify;
-	font-size: large;
+	align-content: center;
+	max-height: 600px;
+	max-width: 900px;
+}
+
+h4 {
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: left;
 }

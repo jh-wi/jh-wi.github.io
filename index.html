@@ -3,16 +3,169 @@
 <head>
 	<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="intro">
 
 <br>
-<h1>Henry's New Website</h1>
-<p>Henry Williams</p>
+<h1>Henry: A Brief Value Analysis</h1>
+<p class="figure">Henry Williams</p>
+
+<br><br>
+<img class="figure" src="content/henry.png">
 <br>
-<p>
-	This is a test paragraph. I'm just typing nonsense here for now, hoping that it will correctly
-	overflow to a new line. This is now getting much too long for a single line.
+<p class="figure"><b>Figure 1:</b> <i>Henry in his natural habitat.</i></p>
+
+</body>
+<body id="main">
+
+<br><br>
+<hr>
+<h4>Abstract</h4>
+<p class="section">
+	In this paper we propose Henry, a software developer. Our benchmarks find that Henry is a 
+	fantastic programmer and a joy to work with. Disclaimer: These conclusions may be slightly biased.
 </p>
+<hr>
+
+<br>
+<h4>1 Introduction</h4>
+<p class="section">
+	Henry greatly enjoys performance-oriented programming. He started making games in 2011, which
+	led to interests in real-time constrained fields such as physics simulation and graphics. 
+	Nearing the completion of his degree, given his skillset and affinity for money, he naturally 
+	gravitated towards a position in high-frequency trading (HFT).
+</p>
+
+<br>
+<h4>2 Previous Work</h4>
+<p class="section">
+	Henry has been working at Tradebot, one of the oldest HFT firms, since June 2022. He spends 
+	most of his time building out the company's C++ research infrastructure, and is open to 
+	further inquiries about this experience. [<a href="https://www.linkedin.com/in/henrywilliamsdev/">LinkedIn</a>]
+</p>
+
+<br>
+<h4>3 Starboard</h4>
+<p class="section">
+	Starboard is a large open-world multiplayer game that has been developed casually over nearly 
+	8 years using Unity/C#. It was officially "postponed" in 2023 but is secretly still being 
+	worked on. Because Henry is tired of writing about himself in the third person, this 
+	paper will henceforth be written in the first person.
+</p>
+
+<br>
+<h4>3.1 Procedural Animation</h4>
+<p class="section">
+	Trying to code natural movement for creatures is a lot of fun. This crab, for example, uses 
+	<a href="https://en.wikipedia.org/wiki/Inverse_kinematics">inverse kinematics</a> to calculate 
+	leg transformations given the context of his body and the surrounding terrain.
+</p>
+<br>
+<video class="figure" autoplay muted loop>
+	<source src="content/crab.mp4">
+</video>
+<br>
+<p class="figure"><b>Figure 2:</b> <i>Crustacean animation.</i></p>
+<br>
+
+<br>
+<h4>3.2 Stability Base Building</h4>
+<br>
+<img class="figure" src="content/floating_tree.jpg">
+<br>
+<p class="figure"><b>Figure 3:</b> <i>Undesirable behavior.</i></p>
+<br><br>
+<p class="section">
+	I was always a little bothered by the floating trees in Minecraft. Bored one day in lecture, 
+	I sketched out an algorithm to prevent "floating islands" with the base building system in 
+	Starboard, and eventually made it open source [<a href="https://github.com/kodiakwhale/stability-build-system/">GitHub</a>]. 
+	Each component of the structure is treated as a node in a graph, propagating stability updates 
+	as pieces are added and removed, using collision detection to calculate edges. This is  
+	computed asynchronously across multiple frames in the game to prevent latency spikes.
+</p>
+<br>
+<video class="figure" autoplay muted loop>
+	<source src="content/stability.mp4">
+</video>
+<br>
+<p class="figure"><b>Figure 4:</b> <i>Building a pier that collapses once it's no longer connected to land.</i></p>
+<br>
+
+<br>
+<h4>3.3 Procedural Generation</h4>
+<p class="section">
+	Until recently, I was detailing every island in the game by hand, which gave me full creative 
+	control but also took a lot of time. I made a tool to automate much of this process, generating 
+	an entire resource-filled island from just a rough model and some generation parameters.
+</p>
+<br>
+<img class="figure" src="content/islands.png">
+<br>
+<p class="figure"><b>Figure 5:</b> <i>Automatic detailing given different input parameters.</i></p>
+<br>
+<br>
+<img class="figure" src="content/grass.png">
+<br>
+<p class="figure"><b>Figure 6:</b> <i>Example of a refinement pass; removing plants where they cannot survive.</i></p>
+<br>
+
+<br>
+<h4>3.4 Water</h4>
+<p class="section">
+	<a href="https://en.wikipedia.org/wiki/Trochoidal_wave">Gerstner waves</a> can be implemented 
+	with the <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">fast Fourier transform</a> 
+	to simulate the surface of an ocean in real-time. This relatively straightforward project becomes 
+	much more interesting if you want the simulation to be influenced by multiple clients (e.g. the 
+	wakes of several boats) and synchronized across the network. I originally used a great open source project 
+	called <a href="https://github.com/wave-harmonic/crest">Crest</a>, but I needed my ocean to run 
+	on a headless server without a GPU, which isn't possible with Crest. There are no decent open 
+	source solutions at the moment, so I'm working on my own.
+</p>
+<br>
+<video class="figure" autoplay muted loop>
+	<source src="content/fft_ocean.mp4">
+</video>
+<br>
+<p class="figure"><b>Figure 7:</b> <i>A boat sampling the height of the water to calculate buoyancy physics.</i></p>
+<br>
+
+<br>
+<h4>4 Voxels</h4>
+<p class="section">
+	I've always been fascinated by voxels, where scene data is organized on a 3D grid. Having such 
+	a pure representation of the world makes so many cool physics & graphics optimizations possible.
+</p>
+
+<br>
+<h4>4.1 Isosurface Extraction</h4>
+<p class="section">
+	Given a uniform scalar density field, several algorithms exist to generate an 
+	<a href="https://en.wikipedia.org/wiki/Isosurface">isosurface</a> for it. My undergraduate reserach 
+	project explored using these techniques to visualize MRI scans. I similarly applied this knowledge 
+	to create a high-resolution real-time sculpting toy. With some clever chunking logic, the isosurface 
+	algorithm becomes somewhat naively parallelizable, enabling it to run quite well on a modern laptop 
+	without a GPU.
+</p>
+<br>
+<video class="figure" autoplay muted loop>
+	<source src="content/sculpting.mp4">
+</video>
+<br>
+<p class="figure"><b>Figure 8:</b> <i>Playing around with virtual clay using 16 threads.</i></p>
+<br>
+
+<br>
+<h4>5 Future Work</h4>
+<p class="section">
+	I've started work on parallel physics engine and raytracing prototypes to turn my sculpting 
+	toy into a something a little more substantial. Both of these projects benefit dramatically from 
+	well structured volumetric data, and the implementation details can look quite different than 
+	those of traditional techniques. This work is still in its early stages, but I'm very excited to 
+	be working on it for the next few years.
+</p>
+
+<br>
+<br>
+<br>
 
 </body>
 </html>
